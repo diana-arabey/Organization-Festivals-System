@@ -1,35 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+		
 		<title>Restaurant HTML Template</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700%7CCabin:400%7CDancing+Script" rel="stylesheet">
 
 		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css"/>
 
 		<!-- Owl Carousel -->
-		<link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
-		<link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+		<link type="text/css" rel="stylesheet" href="./css/owl.carousel.css" />
+		<link type="text/css" rel="stylesheet" href="./css/owl.theme.default.css" />
 
 		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="./css/font-awesome.min.css">
 
 		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+		<link type="text/css" rel="stylesheet" href="./css/style.css"/>
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+	
 
     </head>
 	<body>
@@ -148,7 +142,7 @@
 
 						<!-- blog post content -->
 						<div class="blog-content">
-							<h3>${name}</h3>
+							<h3 th:text=" ${event.name}"/>
 							<p> "${name}"</p>
 							<p>Et duo putant euripidis, nam eros epicuri id. At sed solet omnesque, ex saepe regione iracundia mea. Cum rebum rationibus ut, nihil eruditi sea no, quo insolens platonem delicatissimi cu. Per dicunt omittantur ea, possit legimus cu sit, vis enim putent te. Sea an eirmod theophrastus, eum cu everti iriure.</p>
 							<p>Altera detraxit cum ex. Est perpetua voluptatum at. Ut vim noster accusamus. Sed prompta intellegam sadipscing id, ex eam quodsi aperiam. Eu his vero rebum iriure. Has te rebum noluisse, et vel vivendo sadipscing complectitur, eu erat debet dolorum quo.</p>
@@ -335,10 +329,10 @@
 		<!-- /Preloader -->
 
 		<!-- jQuery Plugins -->
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
 
 	</body>
 </html>

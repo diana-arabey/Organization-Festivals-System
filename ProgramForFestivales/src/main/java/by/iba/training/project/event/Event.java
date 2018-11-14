@@ -10,6 +10,7 @@ import by.iba.training.project.people.Performer;
 
 public class Event {
 
+	private int id;
 	private String name;
 	private Date date;
 	private int countOfMembers;
@@ -21,9 +22,20 @@ public class Event {
 	
 	
 	public Event () {
+		this.id = 1;
+		this.name = "MusicFest";
 		this.place = new PlaceOfEvent("Street Surganova", "Minsk", 15);
 	}
 	
+	
+	public void setId (int id)
+	{
+		this.id = id;
+	}
+	
+	public int getId () {
+		return this.id;
+	}
 	
 	public void setName (String name)
 	{
