@@ -1,4 +1,4 @@
-package by.iba.training.project;
+package by.iba.training.project.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;

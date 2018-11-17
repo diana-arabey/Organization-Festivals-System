@@ -3,28 +3,46 @@ package by.iba.training.project.event;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
 import by.iba.training.project.myexceptions.ExceptionCountOfParticipant;
 import by.iba.training.project.people.Participant;
 import by.iba.training.project.people.Performer;
 
-
+@Entity
+@Table(name = "Event")
 public class Event {
 
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@NotNull
 	private String name;
-	private Date date;
+	@NotNull
+	private String date;
 	private int countOfMembers;
 	private String description;
-	private List<Participant> participants;
-    private List<Performer> performers;
-	private PlaceOfEvent place;
 	private KindOfEvents kindOfEvent;
+	//private List<Participant> participants;
+    //private List<Performer> performers;
+	 @OneToOne(fetch = FetchType.LAZY, optional = false)
+	 @JoinColumn(name = "place_ID", nullable = false)
+	private PlaceOfEvent place;
+	
 	
 	
 	public Event () {
-		this.id = 1;
-		this.name = "MusicFest";
-		this.place = new PlaceOfEvent("Street Surganova", "Minsk", 15);
+		
 	}
 	
 	
@@ -32,26 +50,27 @@ public class Event {
 	{
 		this.id = id;
 	}
-	
+	//@Id
+   // @GeneratedValue(strategy = GenerationType.AUTO)
 	public int getId () {
 		return this.id;
 	}
 	
 	public void setName (String name)
 	{
-		this.name =name;
+		this.name = name;
 	}
 	
 	public String getName () {
 		return this.name;
 	}
 	
-	public void setDate (Date date)
+	public void setDate (String date)
 	{
 		this.date =  date;
 	}
 	
-	public Date getDate () {
+	public String getDate () {
 		return  this.date;
 	}
 	public void increaseCountOfMembers ()
@@ -65,7 +84,16 @@ public class Event {
 	
 	public void setPlace (PlaceOfEvent place)
 	{
-		this.place = place;
+		/*if (place == null) {
+            if (this.place != null) {
+                this.place.setEvent(null);
+            }
+        }
+        else {
+        	place.setEvent(this);
+        }
+        */this.place = place;
+    
 	}
 	
 	public void addParticipant(Participant p ) throws ExceptionCountOfParticipant {
@@ -87,7 +115,7 @@ public class Event {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
+/*
 
 	public List<Participant> getParticipants() {
 		return participants;
@@ -108,7 +136,7 @@ public class Event {
 		this.performers = performers;
 	}
 
-
+*/
 	public KindOfEvents getKindOfEvent() {
 		return kindOfEvent;
 	}
@@ -119,6 +147,7 @@ public class Event {
 	}
 
 
+	 //@OneToOne(mappedBy = "event")
 	public PlaceOfEvent getPlace() {
 		return place;
 	}

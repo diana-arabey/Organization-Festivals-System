@@ -16,16 +16,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import by.iba.training.project.event.Event;
 import by.iba.training.project.people.UserInfo;
 
 
 
-@RestController    
+@Controller    
 
 public class MainController {
 	//@Autowired 
 	           
-	private UserRepository userRepository;
+	
+
+	
+	@GetMapping("/index") 
+    public String index() {
+		
+        return "index";
+    }
 	
 //	@RequestMapping(path = "/addEvent") 
 //	public  String addEvent () {
