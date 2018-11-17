@@ -47,10 +47,7 @@ public class PlaceOfEvent {
 		maxAmountOfParticipant = t;
 	}
 	
-	public String getCity()
-	{
-		return city;
-	}
+	
 	
 	public void setAdress(String adress) {
 		this.adress = adress;
@@ -61,9 +58,7 @@ public class PlaceOfEvent {
 		return adress;
 	}
 	
-	public void setCity(String city) {
-		this.city = city;
-	}
+	
 
 ////	 @Id
 //	 @GeneratedValue(strategy = GenerationType.AUTO)
@@ -90,6 +85,14 @@ public class PlaceOfEvent {
 
 	public void setEvent(Event event) {
 		this.event = event;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
 	}
 }
  

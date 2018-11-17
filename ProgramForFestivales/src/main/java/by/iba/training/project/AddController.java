@@ -1,5 +1,7 @@
 package by.iba.training.project;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,14 +40,22 @@ public class AddController {
 		//event.setPlace(place);
 		place.setEvent(event);
 		event.setPlace(place);
-		placeRepository.save(place);
+		//placeRepository.save(place);
 		//eventRepository.save(event);
-        model.addAttribute("event", event);
+		String name ;
+		String city = "Minsk";
+        model.addAttribute("name");
+        model.addAttribute("city");
+        //model.addAttribute("city", place.getCity());
         return "addEvent";
     }
 
     @PostMapping("/addEvent")
-    public String eventSubmit(@ModelAttribute Event event) {
+    public String eventSubmit(Model model, HttpServletRequest response) {
+    	String name = response.getParameter("name");
+    	System.out.println(name);
+    	String city = response.getParameter("city");
+    	System.out.println(city);
         return "blog";
     }
     

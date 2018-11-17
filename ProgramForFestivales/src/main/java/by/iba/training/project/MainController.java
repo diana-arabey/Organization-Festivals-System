@@ -26,6 +26,10 @@ import by.iba.training.project.people.UserInfo;
 public class MainController {
 	//@Autowired 
 	           
+	@RequestMapping("/")
+		public String showHome() {
+			return "index1";
+		}
 	
 
 	

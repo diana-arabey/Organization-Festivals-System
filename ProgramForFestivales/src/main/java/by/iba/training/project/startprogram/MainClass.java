@@ -71,7 +71,7 @@ public class MainClass {
 		PlaceOfEvent place = new PlaceOfEvent();
 		place.setAdress("some address new1");
 		place.setAmount(28);
-		place.setCity("Minsk");
+	//	place.setCity("Minsk");
 		session.save(place);
 		session.getTransaction().commit();;
 		sesFact.close();
