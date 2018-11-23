@@ -66,7 +66,7 @@
 
 					<!-- nav -->
 					<ul class="main-nav nav navbar-nav">
-						<li><a href="#">Home</a></li>
+						<li><a href="index">Home</a></li>
 						<li><a href="#">About</a></li>
 						<li><a href="#">Menu</a></li>
 						<li><a href="#">Reservation</a></li>
@@ -143,11 +143,12 @@
 						<!-- blog post content -->
 						<div class="blog-content">
 							<h3 th:text= "${param.name}"/>
-							<p th:text = "${param.city}" />
+							<p th:text = "'Theme of the festival: ' + ${param.kind}" />
+							<p th:text = "'Date: ' + ${param.date}" />
+							<p th:text = " ${param.description}" />
+							<p th:text = "'Location: ' + ${param.city} +','+  ${param.adress}" />
+							<p th:text = "'Number of participants: ' + ${param.maxAmountOfParticipant}" />
 							
-							<p>Et duo putant euripidis, nam eros epicuri id. At sed solet omnesque, ex saepe regione iracundia mea. Cum rebum rationibus ut, nihil eruditi sea no, quo insolens platonem delicatissimi cu. Per dicunt omittantur ea, possit legimus cu sit, vis enim putent te. Sea an eirmod theophrastus, eum cu everti iriure.</p>
-							<p>Altera detraxit cum ex. Est perpetua voluptatum at. Ut vim noster accusamus. Sed prompta intellegam sadipscing id, ex eam quodsi aperiam. Eu his vero rebum iriure. Has te rebum noluisse, et vel vivendo sadipscing complectitur, eu erat debet dolorum quo.</p>
-							<p>Eu usu aliquip vivendo. Impedit suscipit invidunt te vel, sale periculis id mea. Ne nec atqui paulo, ad vel zril saperet consequuntur, cu dolore facilisi vulputate mei. Mei copiosae voluptaria in, quo ut mazim possit vivendum. Per nulla theophrastus</p>
 						</div>
 						<!-- /blog post content -->
 

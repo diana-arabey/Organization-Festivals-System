@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" 
+         />
+  </head>
+  <body>
+    <h1>Product list</h1>
+    <table th:each="prod,iterStat : ${prods}" th:class="${iterStat.odd}? 'odd'">
+     
+      
+		    <tr th:text="${prod.city}">Onions</tr>
+		    <tr th:text="${prod.adress}">2.41</tr>
+		    
+  
+
+     
+    </table>
+    <p>
+     
+    </p>
+  </body>
+</html>

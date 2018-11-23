@@ -1,5 +1,10 @@
-package by.iba.training.project;
+package by.iba.training.project.controller;
 
+import java.util.HashMap;
+
+import java.util.Map;
+
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 
@@ -15,29 +20,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.thymeleaf.ITemplateEngine;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.templatemode.TemplateMode;
+import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 import by.iba.training.project.event.Event;
-import by.iba.training.project.people.UserInfo;
-
+import by.iba.training.project.people.User;
 
 
 @Controller    
-
 public class MainController {
-	//@Autowired 
 	           
-	@RequestMapping("/")
-		public String showHome() {
-			return "index1";
-		}
-	
 
-	
 	@GetMapping("/index") 
     public String index() {
 		
         return "index";
     }
+	
+	
+
+    
+    
+ 
+    
+	
 	
 //	@RequestMapping(path = "/addEvent") 
 //	public  String addEvent () {
@@ -100,9 +108,5 @@ public class MainController {
 //		return "Saved";
 //	}
 //	
-//	@GetMapping(path="/all")
-//	public @ResponseBody Iterable<UserInfo> getAllUsers() {
-//	
-//		return userRepository.findAll();
-//	}
+	
 }

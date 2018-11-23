@@ -22,7 +22,7 @@ import by.iba.training.project.event.Event;
 import by.iba.training.project.event.PlaceOfEvent;
 import by.iba.training.project.myexceptions.ExceptionCountOfParticipant;
 import by.iba.training.project.people.Participant;
-import by.iba.training.project.people.UserInfo;
+import by.iba.training.project.people.User;
 
 
 public class MainClass {
@@ -70,7 +70,7 @@ public class MainClass {
 		
 		PlaceOfEvent place = new PlaceOfEvent();
 		place.setAdress("some address new1");
-		place.setAmount(28);
+		//place.setAmount(28);
 	//	place.setCity("Minsk");
 		session.save(place);
 		session.getTransaction().commit();;

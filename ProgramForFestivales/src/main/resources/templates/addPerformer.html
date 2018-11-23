@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add an event</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="./fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="./css/styleForAddPerformer.css">
+    
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form action="#" th:action="@{/addPerformer}"  method="post" class="appointment-form" id="appointment-form"  >
+                <h2>ADD A Performer </h2>
+                <div class="form-group-1">
+                    <input type="text" id="name" placeholder="Firstname" th:value="${continfo.firstname}" name="firstname" />
+                    <input type="text" id="surname" placeholder="Surname" th:value="${continfo.surname}" name="surname" />
+                    <input type="number" id="age" placeholder="Age" th:value="${continfo.age}" name="age" />
+                     <div class="select-list">
+                     <select name="type" id="type">               
+                            <option value="MUSICIANPERFORMER">MUSICIANPERFORMER</option>
+                            <option value="MUSICALGROUP">MUSICALGROUP</option>
+                            <option value="ACTOR">ACTOR</option>
+                            <option value="FILMMAKER">FILMMAKER</option>
+                            <option value="DANCINGGROUP">DANCINGGROUP</option>
+                            <option value="HISTORIAN">HISTORIAN</option>
+                            <option value="SIENTIST">SIENTIST</option>
+                            <option value="CHEF">CHEF</option>
+                            <option value="BUSINESSMAN">BUSINESSMAN</option>
+                     </select>
+                    </div>
+                   
+                    <input type="text" id="achievement" placeholder="Achievement" th:value="${performer.achievement}" name="achievement"/>
+                    <input type="text"  id="profession" placeholder="Profession" th:value="${performer.profession}" name="profession"/>
+                 </div>
+
+                <div class="form-submit">
+                    <input type="submit" name="submit" id="submit" class="submit"  value="Save performer"  />
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./js/mainForAddEvent.js"></script>
+</body>
+</html>

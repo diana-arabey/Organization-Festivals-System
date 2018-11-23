@@ -14,54 +14,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user")
-public class UserInfo {
+public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
-	/*private String surname;
-	private String firstname;
-	private int  age;
-	*/private String number;
+    private String number;
 	private String mail;
 	
 	//private RegInfo reginfo;
 	
 
 	
-/*	public UserInfo (String surn, String name, int age)
-	{
-		this.surname = surn;
-		this.firstname = name;
-		this.age = age ;
-
-	}
-	
-	*/public UserInfo ()
-
+	public User ()
 	{
 	
-	}
-	
-/*	public String getName () {
-		return firstname;
-	}
-	
-	public void setName (String firstname) {
-		this.firstname = firstname;
-	}
-	
-	public String getSecondName () {
-		return surname;
-	}
-	
-	public void setSecondName (String surname) {
-		this.surname = surname;
-	}
-	
-	
-*/	
-	public void setID(int id) {
-		this.id = id;
 	}
 	
 	public void setNumber(String str) {
@@ -93,6 +59,26 @@ public class UserInfo {
 	public String getMail() {
 		return mail;
 	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+//	public RegInfo getReginfo() {
+//		return reginfo;
+//	}
+//
+//
+//	public void setReginfo(RegInfo reginfo) {
+//		this.reginfo = reginfo;
+//	}
 	
 	
 }

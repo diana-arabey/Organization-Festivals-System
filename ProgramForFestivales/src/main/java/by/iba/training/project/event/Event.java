@@ -36,7 +36,7 @@ public class Event {
 	//private List<Participant> participants;
     //private List<Performer> performers;
 	 @OneToOne(fetch = FetchType.LAZY, optional = false)
-	 @JoinColumn(name = "place_ID", nullable = false)
+	 @JoinColumn(name = "place_ID")
 	private PlaceOfEvent place;
 	
 	

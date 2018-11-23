@@ -5,10 +5,10 @@ import by.iba.training.project.event.Event;
 
 public class Participant {
 
-	private UserInfo info;
+	private User info;
 	private List<Event> listOfEvent;
 	
-	public Participant (UserInfo info){
+	public Participant (User info){
 		this.info = info;
 	}
 	

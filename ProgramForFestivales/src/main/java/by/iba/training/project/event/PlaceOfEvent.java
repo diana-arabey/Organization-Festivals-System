@@ -29,39 +29,11 @@ public class PlaceOfEvent {
             mappedBy = "place")
 	private Event event;
 	
-	public   PlaceOfEvent (String adress, String city,int maxAmount){
-		this.adress = adress;
-		this.maxAmountOfParticipant = maxAmount;
-		this.city = city;
-	//	this.id = 1;
-		
-	}
 	
 	public   PlaceOfEvent (){
 		
 	}
 	
-	
-	
-	public void setAmount(int t) {
-		maxAmountOfParticipant = t;
-	}
-	
-	
-	
-	public void setAdress(String adress) {
-		this.adress = adress;
-	}
-	
-	public String getAdress()
-	{
-		return adress;
-	}
-	
-	
-
-////	 @Id
-//	 @GeneratedValue(strategy = GenerationType.AUTO)
 	public int getId() {
 		return id;
 	}
@@ -77,8 +49,8 @@ public class PlaceOfEvent {
 	public void setMaxAmountOfParticipant(int maxAmountOfParticipant) {
 		this.maxAmountOfParticipant = maxAmountOfParticipant;
 	}
-//	@OneToOne(cascade = CascadeType.ALL)
-   // @JoinColumn(name = "place_id")
+
+	
 	public Event getEvent() {
 		return event;
 	}
@@ -93,6 +65,14 @@ public class PlaceOfEvent {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
 	}
 }
  

@@ -1,0 +1,5 @@
+package by.iba.training.project.people;
+
+public enum PerformerType {
+	MUSICIANPERFORMER, MUSICALGROUP, ACTOR, FILMMAKER, DANCINGGROUP, HISTORIAN, SIENTIST, CHEF, WAITER, BUSINESSMAN
+}

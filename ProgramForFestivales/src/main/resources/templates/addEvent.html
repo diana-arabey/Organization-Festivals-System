@@ -22,29 +22,49 @@
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form>
     -->
+    <style>
+		.letter {
+		    color: black;
+		    }
+	</style>
+	
+
+	
         <div class="container">
             <form action="#" th:action="@{/addEvent}"  method="post" class="appointment-form" id="appointment-form"  >
                 <h2>ADD AN EVENT</h2>
                 <div class="form-group-1">
-                    <input type="text" id="name" placeholder="Name" th:value="${name}" name="name" />
-                 	<input type="text"  id="city" placeholder="City" th:value="${city}" name="city"/>
+                    <input type="text" id="name" placeholder="Name" th:value="${event.name}" name="name" />
+                    <div class="select-list">
+                     <select name="kind" id="kind">               
+                            <option value="music">Music</option>
+                            <option value="film">Film</option>
+                            <option value="history">History</option>
+                            <option value="sience">Sience</option>
+                     </select>
                      
-                   <!--  <input type="number" name="countOfMembers" id="email" placeholder="Count of members" th:field="*{name}"/>
-                    <input type="text" name="description" id="phone_number" placeholder="Description" th:field="*{name}" />
-                  
-                  -  <div class="select-list">
-                        <select name="KindOfEvent" id="course_type">
-                            <option slected value="">Kind of Event</option>
-                            <option value="society">Music</option>
-                            <option value="language">Film</option>
-                            <option value="society">History</option>
-                            <option value="language">Sience</option>
-                        </select>
                     </div>
-               --> </div>
+                    <input type="text" id="date" placeholder="Date" th:value="${event.date}" name="date"/>
+                    <input type="text"  id="description" placeholder="Description" th:value="${event.description}" name="description"/>
+                 	<input type="text"  id="city" placeholder="City" th:value="${place.city}" name="city"/>
+                    <input type="text"  id="adress" placeholder="Address" th:value="${place.adress}" name="adress"/>
+                    <input type="number"  id="maxCount" placeholder="Max amount of particpants" th:value="${place.maxAmountOfParticipant}" name="maxAmountOfParticipant"/>
+                 	
+                  	<fieldset>  
+                 	<div th:each="prod,iterStat : ${list}" th:class="${iterStat.odd}? 'odd'" >               
+                            <input  type="checkbox" style = 'display:inline;' name="firstname"  id = "firstname"  /> <span class="letter"  th:text="${prod.firstname}+ ' ' + ${prod.surname} "/>
+                     </div>
+                	</fieldset>  
 
+                 </div>
+
+	<!--   <p style="color:red;">Hello</p><input  type="checkbox" name="colors" value="black"  style= 'display:inline;'/><br />
+	Yellow: <input type="checkbox" name="colors" value="yellow" /><br />
+	Red: <input type="checkbox" name="colors" value="red" /><br />
+	Green: <input type="checkbox" name="colors" value="green" />
+-->
                 <div class="form-submit">
-                    <input type="submit" name="submit" id="submit" class="submit"  value="Submit"  />
+                    <input type="submit" name="submit" id="submit" class="submit"  value="Save"  />
                 </div>
             </form>
         </div>

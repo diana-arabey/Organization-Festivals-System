@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+	<head>
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Restaurant HTML Template</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700%7CCabin:400%7CDancing+Script" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css"/>
+
+		<!-- Owl Carousel -->
+		<link type="text/css" rel="stylesheet" href="./css/owl.carousel.css" />
+		<link type="text/css" rel="stylesheet" href="./css/owl.theme.default.css" />
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="./css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="./css/style.css"/>
+
+	
+
+    </head>
+	<body>
+
+		<!-- Header -->
+		<header id="header">
+
+			<!-- Top nav -->
+			<div id="top-nav">
+				<div class="container">
+
+				<!-- logo -->
+				<div class="logo">
+					<a href="index.html"><img src="./img/logo.png" alt="logo"></a>
+				</div>
+				<!-- logo -->
+
+				<!-- Mobile toggle -->
+				<button class="navbar-toggle">
+					<span></span>
+				</button>
+				<!-- Mobile toggle -->
+
+				<!-- social links -->
+				<ul class="social-nav">
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+				</ul>
+				<!-- /social links -->
+
+				</div>
+			</div>
+			<!-- /Top nav -->
+
+			<!-- Bottom nav -->
+			<div id="bottom-nav">
+				<div class="container">
+				<nav id="nav">
+
+					<!-- nav -->
+					<ul class="main-nav nav navbar-nav">
+						<li><a href="index">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Menu</a></li>
+						<li><a href="#">Reservation</a></li>
+						<li><a href="#">Galery</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+					<!-- /nav -->
+
+					<!-- button nav -->
+					<ul class="cta-nav">
+						<li><a href="#" class="main-button">Reserve</a></li>
+					</ul>
+					<!-- button nav -->
+
+					<!-- contact nav -->
+					<ul class="contact-nav nav navbar-nav">
+						<li><a href="#"><i class="fa fa-phone"></i> 045-548-14-97</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 3685 Granville Lane</a></li>
+					</ul>
+					<!-- contact nav -->
+
+				</nav>
+				</div>
+			</div>
+			<!-- /Bottom nav -->
+
+
+		</header>
+		<!-- /Header -->
+
+		<div class="banner-area">
+
+			<!-- Backgound Image -->
+			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/background01.jpg)"></div>
+			<!-- /Backgound Image -->
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h2 class="white-text title">Blog Post</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+				
+    <!-- Page Content -->
+    <div class="container" >
+
+      <!-- Page Heading -->
+      <h1 class="my-4">Page Heading
+        <small>Secondary Text</small>
+      </h1>
+      
+<style>
+#novisible {
+    visibility:  hidden;
+    }
+</style>
+
+<table th:each="prod,iterStat : ${list}" th:class="${iterStat.odd}? 'odd'">
+          
+	<tr>	    
+      <div class="row" margin-left = -55 px>
+        <div class="col-md-7">
+          <a href="#">
+            <img src="./img/town1.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-md-5">
+          <h3 th:text="${prod.name}"></h3>
+          <p  th:text="${prod.kindOfEvent}">   </p>
+          <p th:text="${prod.description}">   </p>
+          <a id="vis" th:attr="id=${flag}" class="btn btn-primary" href="#" >View Project </a>
+          
+        </div>
+      </div>
+
+      <hr>
+      </tr>
+</table>
+  
+      <!-- Pagination -->
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    <!-- /.container -->
+		
+		
+
+		<!-- Footer -->
+		<footer id="footer">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- copyright -->
+					<div class="col-md-6">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						<span class="copyright">Copyright @2018 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></span>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</div>
+					<!-- /copyright -->
+
+					<!-- footer nav -->
+					<div class="col-md-6">
+						<nav class="footer-nav">
+							<a href="#">Home</a>
+							<a href="#">About</a>
+							<a href="#">Menu</a>
+							<a href="#">Reservation</a>
+							<a href="#">Galery</a>
+							<a href="#">Events</a>
+							<a href="#">Contact</a>
+						</nav>
+					</div>
+					<!-- /footer nav -->
+
+				</div>
+				<!-- /row -->
+
+			</div>
+			<!-- /container -->
+
+		</footer>
+		<!-- /Footer -->
+
+		<!-- Preloader -->
+		<div id="preloader">
+			<div class="preloader">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<!-- /Preloader -->
+
+		<!-- jQuery Plugins -->
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+
+	</body>
+</html>
