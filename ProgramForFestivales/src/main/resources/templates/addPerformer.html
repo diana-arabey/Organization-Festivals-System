@@ -25,9 +25,9 @@
                     <input type="text" id="surname" placeholder="Surname" th:value="${continfo.surname}" name="surname" />
                     <input type="number" id="age" placeholder="Age" th:value="${continfo.age}" name="age" />
                      <div class="select-list">
-                     <select name="type" id="type">               
-                            <option value="MUSICIANPERFORMER">MUSICIANPERFORMER</option>
-                            <option value="MUSICALGROUP">MUSICALGROUP</option>
+                     <select name="type" id="type" th:value = "${performer.type}">               
+                            <option th:value = "${performer.type}">MUSICIANPERFORMER</option>
+                          <!--    <option value="MUSICALGROUP">MUSICALGROUP</option>
                             <option value="ACTOR">ACTOR</option>
                             <option value="FILMMAKER">FILMMAKER</option>
                             <option value="DANCINGGROUP">DANCINGGROUP</option>
@@ -35,7 +35,7 @@
                             <option value="SIENTIST">SIENTIST</option>
                             <option value="CHEF">CHEF</option>
                             <option value="BUSINESSMAN">BUSINESSMAN</option>
-                     </select>
+                    --> </select>
                     </div>
                    
                     <input type="text" id="achievement" placeholder="Achievement" th:value="${performer.achievement}" name="achievement"/>

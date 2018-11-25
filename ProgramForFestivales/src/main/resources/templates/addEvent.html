@@ -31,11 +31,12 @@
 
 	
         <div class="container">
-            <form action="#" th:action="@{/addEvent}"  method="post" class="appointment-form" id="appointment-form"  >
+           <form action="#"   th:object = "${event}" th:action="@{/addEvent}"  method="post"   class="appointment-form">
+            <div class="appointment-form" >
                 <h2>ADD AN EVENT</h2>
                 <div class="form-group-1">
-                    <input type="text" id="name" placeholder="Name" th:value="${event.name}" name="name" />
-                    <div class="select-list">
+                     <input type="text" id="name" placeholder="Name" th:value="${name}" th:text = "${event.name}" name="name" />
+                    <div>
                      <select name="kind" id="kind">               
                             <option value="music">Music</option>
                             <option value="film">Film</option>
@@ -49,29 +50,31 @@
                  	<input type="text"  id="city" placeholder="City" th:value="${place.city}" name="city"/>
                     <input type="text"  id="adress" placeholder="Address" th:value="${place.adress}" name="adress"/>
                     <input type="number"  id="maxCount" placeholder="Max amount of particpants" th:value="${place.maxAmountOfParticipant}" name="maxAmountOfParticipant"/>
-                 	
-                  	<fieldset>  
-                 	<div th:each="prod,iterStat : ${list}" th:class="${iterStat.odd}? 'odd'" >               
-                            <input  type="checkbox" style = 'display:inline;' name="firstname"  id = "firstname"  /> <span class="letter"  th:text="${prod.firstname}+ ' ' + ${prod.surname} "/>
-                     </div>
-                	</fieldset>  
+ 
+                  </div>
+              </div>
+                    <p>Add performers</p>     
+                     <select multiple name = "performers" id ="performers" th:field =  "${event.performers}"  >               
+                      
+                           <option 
+                           		th:each="perf,iterStat : ${list}" 
+                           		th:class="${iterStat.odd}? 'odd'"  
+                           		 th:text="${perf.conifo.firstname}  " 
+                           		 th:value ="${{perf}}" >
+                          </option>
+                     </select>
+                     
+	                    	<div action="#" th:action="@{/addEvent}"  method="post">
+                    			<input type="submit" name="submit" id="submit" class="submit"  value="Save event"  />
+                			</div>
+	       		</form>
+                 	        	
 
-                 </div>
-
-	<!--   <p style="color:red;">Hello</p><input  type="checkbox" name="colors" value="black"  style= 'display:inline;'/><br />
-	Yellow: <input type="checkbox" name="colors" value="yellow" /><br />
-	Red: <input type="checkbox" name="colors" value="red" /><br />
-	Green: <input type="checkbox" name="colors" value="green" />
--->
-                <div class="form-submit">
-                    <input type="submit" name="submit" id="submit" class="submit"  value="Save"  />
-                </div>
-            </form>
         </div>
 
     </div>
 
-    <!-- JS -->
+ 
     <script src="./vendor/jquery/jquery.min.js"></script>
     <script src="./js/mainForAddEvent.js"></script>
 </body>

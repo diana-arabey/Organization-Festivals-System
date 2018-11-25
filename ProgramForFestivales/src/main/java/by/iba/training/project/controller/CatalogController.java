@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import by.iba.training.project.event.Event;
+import by.iba.training.project.people.Performer;
 import by.iba.training.project.repository.EventRepository;
 
 @Controller
@@ -23,8 +24,15 @@ public class CatalogController {
 		
 		List<Event> listEvent = new ArrayList<Event>();
 		for(Event ev : eventRepository.findAll()) {
+			
+			List<Performer> perl = ev.getPerformers();
+			
+			for (Performer p : perl) {
+				System.out.println(p.getProfession());
+			}
 			listEvent.add(ev);
 		}	
+		
 		model.addAttribute("list", listEvent);
 		model.addAttribute("flag", "novisible");
 		return "catalog";

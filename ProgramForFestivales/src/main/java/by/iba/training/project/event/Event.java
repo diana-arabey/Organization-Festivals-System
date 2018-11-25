@@ -10,9 +10,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import by.iba.training.project.myexceptions.ExceptionCountOfParticipant;
@@ -25,16 +28,23 @@ public class Event {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@NotNull
+	private int id;	
 	private String name;
-	@NotNull
 	private String date;
 	private int countOfMembers;
 	private String description;
 	private KindOfEvents kindOfEvent;
 	//private List<Participant> participants;
-    //private List<Performer> performers;
+	
+	
+	 @ManyToMany(fetch = FetchType.LAZY,
+     cascade = {
+         CascadeType.PERSIST,
+         CascadeType.MERGE
+     },
+     mappedBy = "listOfEvent")
+    private List<Performer> performers;
+	
 	 @OneToOne(fetch = FetchType.LAZY, optional = false)
 	 @JoinColumn(name = "place_ID")
 	private PlaceOfEvent place;
@@ -126,7 +136,7 @@ public class Event {
 		this.participants = participants;
 	}
 
-
+*/
 	public List<Performer> getPerformers() {
 		return performers;
 	}
@@ -136,7 +146,7 @@ public class Event {
 		this.performers = performers;
 	}
 
-*/
+
 	public KindOfEvents getKindOfEvent() {
 		return kindOfEvent;
 	}

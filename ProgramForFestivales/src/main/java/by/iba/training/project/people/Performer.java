@@ -9,13 +9,20 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import by.iba.training.project.event.Event;
 
 
 
 @Entity
 @Table(name = "Performer")
+
 public class Performer {
 	
 	@Id
@@ -31,6 +38,15 @@ public class Performer {
             mappedBy = "performer")
 	private ContactInfo conifo;
 	
+	@ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                CascadeType.PERSIST,
+                CascadeType.MERGE
+            })
+    @JoinTable(name = "Performer_has_Event",
+            joinColumns = { @JoinColumn(name = "Performer_ID") },
+            inverseJoinColumns = { @JoinColumn(name = "Event_ID") })
+	private List<Event> listOfEvent;
 	
 	
 	public int getId() {
@@ -40,12 +56,12 @@ public class Performer {
 		this.id = id;
 	}
 	
-//	public List<Event> getListOfEvent() {
-//		return listOfEvent;
-//	}
-//	public void setListOfEvent(List<Event> listOfEvent) {
-//		this.listOfEvent = listOfEvent;
-//	}
+	public List<Event> getListOfEvent() {
+		return listOfEvent;
+	}
+	public void setListOfEvent(List<Event> listOfEvent) {
+		this.listOfEvent = listOfEvent;
+	}
 	
 	public String getProfession() {
 		return profession;

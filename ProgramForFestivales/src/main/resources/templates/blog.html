@@ -138,19 +138,21 @@
 								<li><i class="fa fa-comments"></i>3</li>
 							</ul>
 						</div>
-						<!-- /blog post img -->
 
-						<!-- blog post content -->
 						<div class="blog-content">
-							<h3 th:text= "${param.name}"/>
-							<p th:text = "'Theme of the festival: ' + ${param.kind}" />
-							<p th:text = "'Date: ' + ${param.date}" />
-							<p th:text = " ${param.description}" />
-							<p th:text = "'Location: ' + ${param.city} +','+  ${param.adress}" />
-							<p th:text = "'Number of participants: ' + ${param.maxAmountOfParticipant}" />
-							
+							<h3 th:text= "${event.name}"/>
+							<p th:text = "'Theme of the festival: ' + ${kind}" />
+							<p th:text = "'Date: ' + ${event.date}" />
+							<p th:text = " ${event.description}" />
+							<p th:text = "'Location: ' + ${event.place.city} +','+  ${event.place.adress}" />
+							<p th:text = "'Number of participants: ' + ${event.place.maxAmountOfParticipant}" />
+							<table th:each="perf,iterStat : ${event.performers}" th:class="${iterStat.odd}? 'odd'">
+							    <tr th:text="${perf.conifo.firstname}"></tr>
+							    <tr th:text="${perf.conifo.surname}"></tr>
+	
+    						</table>
 						</div>
-						<!-- /blog post content -->
+
 
 						<!-- blog post tags -->
 						<div class="blog-tags">

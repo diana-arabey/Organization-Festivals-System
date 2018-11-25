@@ -60,7 +60,8 @@ public class EventController {
 			performerList.add(perf);
 			listcont.add(perf.getConifo());
 		}	
-		model.addAttribute("list", listcont);
+		model.addAttribute("list", performerList);
+		
 		
 		Event event =  new Event();
 		PlaceOfEvent place = new PlaceOfEvent();
@@ -68,8 +69,7 @@ public class EventController {
 		model.addAttribute("kind", kind);
         model.addAttribute("event",event);
         model.addAttribute("place", place);
-       // String str= "";
-       // model.addAttribute("firstname", str);
+
         return "addEvent";
     }
 	
@@ -77,15 +77,27 @@ public class EventController {
 
     @PostMapping("/addEvent")
     public String eventSubmit(@ModelAttribute Event event, Model model, HttpServletRequest response, @ModelAttribute PlaceOfEvent place) {
-    	event.setKindOfEvent(KindOfEvents.valueOf(response.getParameter("kind").toUpperCase()));
-    	//System.out.println(response.getParameter("firstname"));
+    	//event.setKindOfEvent(KindOfEvents.valueOf(response.getParameter("kind").toUpperCase()));
+    	
+    	List<Performer> listPerformer = event.getPerformers();
+    	for(Performer per: listPerformer) {
+    		per.getListOfEvent().add(event);
+    	}
+    	
     	event.setCountOfMembers(0);		
     	place.setEvent(event);
 		event.setPlace(place);
+		
 		placeRepository.save(place);
+		eventRepository.save(event);
+    	showBlog(model);
+        return "/blog";
+    }
     
-    	
-        return "blog";
+    @GetMapping("/blog")
+	public String showBlog(Model model) {
+    
+    	return "blog";
     }
     
 

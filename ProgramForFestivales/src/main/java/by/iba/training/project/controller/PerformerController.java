@@ -1,5 +1,8 @@
 package by.iba.training.project.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +39,7 @@ public class PerformerController {
 		Performer performer =  new Performer();
 		ContactInfo continfo = new ContactInfo();
 		String type ="" ;
+		
 		model.addAttribute("type", type);
         model.addAttribute("performer",performer);
         model.addAttribute("continfo", continfo);
@@ -45,13 +49,18 @@ public class PerformerController {
 	
 	 @PostMapping("/addPerformer")
 	    public String eventSubmit(@ModelAttribute Performer performer, Model model, HttpServletRequest response, @ModelAttribute ContactInfo coninfo) {
-		 	performer.setType(PerformerType.valueOf(response.getParameter("type").toUpperCase()));
+		 	//performer.setType(PerformerType.valueOf(response.getParameter("type").toUpperCase()));
+		 	
 		 	performer.setConifo(coninfo);
+		 	
 		 	coninfo.setPerformer(performer);
 		 	performerRepository.save(performer);
+		 	
 	    	
 	        return "index";
 	    }
 	 
+	 
+
 	 
 }
