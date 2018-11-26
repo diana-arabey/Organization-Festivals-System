@@ -21,6 +21,7 @@ import javax.validation.constraints.NotNull;
 import by.iba.training.project.myexceptions.ExceptionCountOfParticipant;
 import by.iba.training.project.people.Participant;
 import by.iba.training.project.people.Performer;
+import by.iba.training.project.people.User;
 
 @Entity
 @Table(name = "Event")
@@ -43,12 +44,19 @@ public class Event {
          CascadeType.MERGE
      },
      mappedBy = "listOfEvent")
-    private List<Performer> performers;
+     private List<Performer> performers;
 	
 	 @OneToOne(fetch = FetchType.LAZY, optional = false)
 	 @JoinColumn(name = "place_ID")
-	private PlaceOfEvent place;
+	 private PlaceOfEvent place;
 	
+	 @ManyToMany(fetch = FetchType.LAZY,
+		     cascade = {
+		         CascadeType.PERSIST,
+		         CascadeType.MERGE
+		     },
+	 mappedBy = "listOfEvent")
+	 private List<User> users;
 	
 	
 	public Event () {
@@ -165,6 +173,16 @@ public class Event {
 
 	public void setCountOfMembers(int countOfMembers) {
 		this.countOfMembers = countOfMembers;
+	}
+
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 	
 	

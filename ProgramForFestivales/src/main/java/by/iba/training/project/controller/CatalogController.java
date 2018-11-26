@@ -27,14 +27,14 @@ public class CatalogController {
 			
 			List<Performer> perl = ev.getPerformers();
 			
-			for (Performer p : perl) {
-				System.out.println(p.getProfession());
-			}
+//			for (Performer p : perl) {
+//				System.out.println(p.getProfession());
+//			}
 			listEvent.add(ev);
 		}	
 		
 		model.addAttribute("list", listEvent);
-		model.addAttribute("flag", "novisible");
+		model.addAttribute("flag", "visible");
 		return "catalog";
 	}
 }

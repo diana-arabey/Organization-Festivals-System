@@ -26,6 +26,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
 import by.iba.training.project.event.Event;
+import by.iba.training.project.people.PersonRole;
 import by.iba.training.project.people.User;
 
 
@@ -33,14 +34,19 @@ import by.iba.training.project.people.User;
 public class MainController {
 	           
 
+	public static PersonRole roleInUse ;
+	
 	@GetMapping("/index") 
     public String index() {
 		
         return "index";
     }
 	
+	static {
+		roleInUse = PersonRole.NONREGUSER;
+		System.out.println(roleInUse.name());
+	}
 	
-
     
     
  

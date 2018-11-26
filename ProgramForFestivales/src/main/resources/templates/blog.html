@@ -146,6 +146,7 @@
 							<p th:text = " ${event.description}" />
 							<p th:text = "'Location: ' + ${event.place.city} +','+  ${event.place.adress}" />
 							<p th:text = "'Number of participants: ' + ${event.place.maxAmountOfParticipant}" />
+							
 							<table th:each="perf,iterStat : ${event.performers}" th:class="${iterStat.odd}? 'odd'">
 							    <tr th:text="${perf.conifo.firstname}"></tr>
 							    <tr th:text="${perf.conifo.surname}"></tr>

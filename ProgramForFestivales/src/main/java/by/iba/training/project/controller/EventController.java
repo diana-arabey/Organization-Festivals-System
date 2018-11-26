@@ -57,8 +57,9 @@ public class EventController {
 		List<Performer> performerList = new ArrayList<Performer>();
 		List<ContactInfo> listcont = new ArrayList<ContactInfo>();
 		for(Performer perf : performerRepository.findAll()) {
+			//System.out.println();
 			performerList.add(perf);
-			listcont.add(perf.getConifo());
+			
 		}	
 		model.addAttribute("list", performerList);
 		
@@ -101,23 +102,7 @@ public class EventController {
     }
     
 
-    @GetMapping("/show")
-	public String createUserView(Model model
-	      ) {
-		List<PlaceOfEvent> list = new ArrayList<PlaceOfEvent>();
-		
-		for(PlaceOfEvent pl : placeRepository.findAll()) {
-				list.add(pl);
-			}
-	
-		for(PlaceOfEvent pl : list) {
-			System.out.println(pl.getCity());
-		}
-		
-		model.addAttribute("prods", list);
-		
-		return "show";
-	}
+   
     
     
   

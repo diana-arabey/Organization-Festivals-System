@@ -35,7 +35,7 @@
             <div class="appointment-form" >
                 <h2>ADD AN EVENT</h2>
                 <div class="form-group-1">
-                     <input type="text" id="name" placeholder="Name" th:value="${name}" th:text = "${event.name}" name="name" />
+                     <input type="text" id="name" placeholder="Name" th:value="${name}"  name="name" />
                     <div>
                      <select name="kind" id="kind">               
                             <option value="music">Music</option>
@@ -59,7 +59,7 @@
                            <option 
                            		th:each="perf,iterStat : ${list}" 
                            		th:class="${iterStat.odd}? 'odd'"  
-                           		 th:text="${perf.conifo.firstname}  " 
+                           		 th:text="${perf.conifo.firstname} + ' ' + ${perf.conifo.surname}  " 
                            		 th:value ="${{perf}}" >
                           </option>
                      </select>
