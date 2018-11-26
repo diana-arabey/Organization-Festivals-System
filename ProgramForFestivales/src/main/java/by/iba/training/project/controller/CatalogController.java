@@ -32,8 +32,10 @@ public class CatalogController {
 //			}
 			listEvent.add(ev);
 		}	
-		
+		Event prod = new Event();
+		model.addAttribute("prod", prod);
 		model.addAttribute("list", listEvent);
+		
 		model.addAttribute("flag", "visible");
 		return "catalog";
 	}

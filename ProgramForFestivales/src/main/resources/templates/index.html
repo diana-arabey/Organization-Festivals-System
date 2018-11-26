@@ -35,11 +35,7 @@
 			<div id="top-nav">
 				<div class="container">
 
-				<!-- logo -->
-				<div class="logo">
-					<a href="index.html"><img src="./img/logo.png" alt="logo"></a>
-				</div>
-				<!-- logo -->
+				
 
 				<!-- Mobile toggle -->
 				<button class="navbar-toggle">
@@ -67,25 +63,25 @@
 					<!-- nav -->
 					<ul class="main-nav nav navbar-nav">
 						<li><a href="index">Home</a></li>
-						<li><a href="new">About</a></li>
 						<li><a href="catalog">Catalog</a></li>
-						<li><a href="#">Reservation</a></li>
-						<li><a href="#">Galery</a></li>
+						<li><a href="addPerformer">Add Performer</a></li>						
 						<li><a href="addEvent">Add Events</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="#contact">Contact</a></li>
 					</ul>
 					<!-- /nav -->
 
 					<!-- button nav -->
 					<ul class="cta-nav">
-						<li><a href="#" class="main-button">Reserve</a></li>
+						<li><a href="/authorization" class="main-button" th:text = "${flagLog}"></a></li>
+						
+						<!-- <li><a href="/authorization" class="main-button">Log out</a></li> -->
 					</ul>
 					<!-- button nav -->
 
 					<!-- contact nav -->
 					<ul class="contact-nav nav navbar-nav">
-						<li><a href="#"><i class="fa fa-phone"></i> 045-548-14-97</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 3685 Granville Lane</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> (29)-69-21-163</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> Minsk m. Ykuba Kolasa</a></li>
 					</ul>
 					<!-- contact nav -->
 
@@ -109,9 +105,9 @@
 
 				<div class="col-md-10 col-md-offset-1 text-center">
 					<div class="home-content">
-						<h1 class="white-text">Welcome To Risotto Restaurant</h1>
-						<h4 class="white-text lead">Nec solet elaboraret eu, ea usu vidit accusam. Ea per legimus singulis percipitur. Graecis ullamcorper nec ex, vix euismod detraxit voluptaria at.</h4>
-						<button class="main-button">Choose festival</button>
+						<h1 class="white-text">Welcome Festivals Guide</h1>
+						<h4 class="white-text lead">We can help you find everething you want.</h4>
+						<a href="/catalog" class="main-button">Find festival</a>
 					</div>
 				</div>
 
@@ -132,75 +128,75 @@
 					<!-- section header -->
 					<div class="section-header text-center">
 						<h4 class="sub-title">About Us</h4>
-						<h2 class="title">The Risotto Restaurant</h2>
+						<h2 class="title">Best Festivals</h2>
 					</div>
 					<!-- /section header -->
 
 					<!-- about content -->
 					<div class="col-md-5">
-						<h4 class="lead">Welcome to Risotto Restaurant. Since 1988, Offering Traditional Dishes of the highest quality.</h4>
+						<h4 class="lead">Welcome to our site. We bring you happiness sinse 2018</h4>
 					</div>
 					<!-- /about content -->
 
 					<!-- about content -->
 					<div class="col-md-7">
-						<p>Te sit stet labitur veritus, sea similique consetetur ut. Ne fastidii oportere usu. Iusto mediocrem iudicabit ea eos, nemore offendit detraxit ei cum. Oblique conclusionemque qui cu, eum no sonet putant. Eos cu nulla vidisse. Mazim oporteat eam ex, his ei audiam audire, affert corrumpit pri cu.</p>
+						<p>На протяжении года в разных уголках Беларуси проходят интересные фестивали  и праздники. Среди них – знаменитые музыкальные и театральные форумы, фестивали народной культуры, старинных ремесел и национальной кухни, великосветские балы, рыцарские турниры и реконструкции эпохи Средневековья, необычные экологические праздники…</p>
 					</div>
 					<!-- /about content -->
 
-					<!-- Galery Slider -->
-					<div class="col-md-12">
+					<!-- Galery Slider 
+				-->	<div class="col-md-12">
 						<div id="galery" class="owl-carousel owl-theme">
 
-							<!-- single column -->
+							
 							<div class="galery-item">
 
-								<!-- single image -->
-								<div class="galery-img" style="background-image:url(./img/image01.jpg)"></div>
-								<!-- /single image -->
+								
+								<div class="galery-img" style="background-image:url(./img/image01.jpg)"></div> 
+								
 
 							</div>
-							<!-- single column -->
+							
 
-							<!-- single column -->
+							
 							<div class="galery-item">
 
-								<!-- single image -->
+								
 								<div class="galery-img" style="background-image:url(./img/image02.jpg)"></div>
-								<!-- /single image -->
+								
 
-								<!-- single image -->
+								
 								<div class="galery-img" style="background-image:url(./img/image03.jpg)"></div>
-								<!-- /single image -->
+								
 
 							</div>
-							<!-- single column -->
+							
 
-							<!-- single column -->
+							
 							<div class="galery-item">
 
 								<div class="item-column">
-									<!-- single image -->
+									
 									<div class="galery-img" style="background-image:url(./img/image04.jpg)"></div>
-									<!-- /single image -->
+									
 
-									<!-- single image -->
+									
 									<div class="galery-img" style="background-image:url(./img/image05.jpg)"></div>
-									<!-- /single image -->
+									
 								</div>
 
 								<div class="item-column">
-									<!-- single image -->
+									
 									<div class="galery-img" style="background-image:url(./img/image06.jpg)"></div>
-									<!-- /single image -->
+									
 
-									<!-- single image -->
+									
 									<div class="galery-img" style="background-image:url(./img/image07.jpg)"></div>
-									<!-- /single image -->
+									
 								</div>
 
 							</div>
-							<!-- /single column -->
+							
 
 						</div>
 					</div>
@@ -231,137 +227,20 @@
 				<div class="row">
 
 					<div class="section-header text-center">
-						<h4 class="sub-title">Discover</h4>
-						<h2 class="title white-text">Our Menu</h2>
+						
+						<h2 class="title white-text">Types of Festivals</h2>
 					</div>
 
 					<!-- menu nav -->
 					<ul class="menu-nav">
-					  <li class="active"><a data-toggle="tab" href="#menu1">Dinner</a></li>
-					  <li><a data-toggle="tab" href="#menu1">Drinks</a></li>
-					  <li><a data-toggle="tab" href="#menu1">Launch</a></li>
-					  <li><a data-toggle="tab" href="#menu1">Dessert</a></li>
+					  <li class="active"><a data-toggle="tab" href="#menu1">Music</a></li>
+					  <li><a data-toggle="tab" href="#menu1">Film</a></li>
+					  <li><a data-toggle="tab" href="#menu1">History</a></li>
+					  <li><a data-toggle="tab" href="#menu1">Sience</a></li>
 					</ul>
 					<!-- /menu nav -->
 
-					<!-- menu content -->
-					<div id="menu-content" class="tab-content">
-
-						<!-- menu1 -->
-						<div id="menu1" class="tab-pane fade in active">
-							<div class="col-md-6">
-
-								<!-- single dish -->
-								<div class="single-dish">
-									<div class="single-dish-heading">
-										<h4 class="name">Basted Rhubarb Mussels</h4>
-										<h4 class="price">57£</h4>
-									</div>
-									<p>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</p>
-								</div>
-								<!-- /single dish -->
-
-								<!-- single dish -->
-								<div class="single-dish">
-									<div class="single-dish-heading">
-										<h4 class="name">Steamed Chili Moussaka</h4>
-										<h4 class="price">145£</h4>
-									</div>
-									<p>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</p>
-								</div>
-								<!-- /single dish -->
-
-								<!-- single dish -->
-								<div class="single-dish">
-									<div class="single-dish-heading">
-										<h4 class="name">Blanched Fennel & Orange Lasagna</h4>
-										<h4 class="price">79£</h4>
-									</div>
-									<p>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</p>
-								</div>
-								<!-- /single dish -->
-
-								<!-- single dish -->
-								<div class="single-dish">
-									<div class="single-dish-heading">
-										<h4 class="name">Slow-Cooked Basil & Lime Ostrich</h4>
-										<h4 class="price">57£</h4>
-									</div>
-									<p>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</p>
-								</div>
-								<!-- /single dish -->
-
-								<!-- single dish -->
-								<div class="single-dish">
-									<div class="single-dish-heading">
-										<h4 class="name">Stuffed Oregano Chicken</h4>
-										<h4 class="price">145£</h4>
-									</div>
-									<p>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</p>
-								</div>
-								<!-- /single dish -->
-
-							</div>
-
-							<div class="col-md-6">
-
-								<!-- single dish -->
-								<div class="single-dish">
-									<div class="single-dish-heading">
-										<h4 class="name">Pressure-Fried Asparagus Chicken</h4>
-										<h4 class="price">57£</h4>
-									</div>
-									<p>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</p>
-								</div>
-								<!-- /single dish -->
-
-								<!-- single dish -->
-								<div class="single-dish">
-									<div class="single-dish-heading">
-										<h4 class="name">Tenderized Egg & Coconut Duck</h4>
-										<h4 class="price">87£</h4>
-									</div>
-									<p>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</p>
-								</div>
-								<!-- /single dish -->
-
-								<!-- single dish -->
-								<div class="single-dish">
-									<div class="single-dish-heading">
-										<h4 class="name">Milk Chocolate Gingerbread</h4>
-										<h4 class="price">155£</h4>
-									</div>
-									<p>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</p>
-								</div>
-								<!-- /single dish -->
-
-								<!-- single dish -->
-								<div class="single-dish">
-									<div class="single-dish-heading">
-										<h4 class="name">Simmered Mango & Pine Rabbit</h4>
-										<h4 class="price">57£</h4>
-									</div>
-									<p>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</p>
-								</div>
-								<!-- /single dish -->
-
-								<!-- single dish -->
-								<div class="single-dish">
-									<div class="single-dish-heading">
-										<h4 class="name">Red Wine Surprise</h4>
-										<h4 class="price">87£</h4>
-									</div>
-									<p>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</p>
-								</div>
-								<!-- /single dish -->
-
-							</div>
-
-						</div>
-						<!-- /menu1 -->
-
-					</div>
-					<!-- /menu content -->
+					
 
 				</div>
 				<!-- /row -->
@@ -373,20 +252,20 @@
 		<!-- /Menu -->
 
 		<!-- Reservation -->
-		<div id="reservation" class="section">
+	<!--	<div id="reservation" class="section"> -->
 
 			<!-- Backgound Image -->
-			<div class="bg-image" style="background-image:url(./img/background03.jpg)"></div>
+		<!--	<div class="bg-image" style="background-image:url(./img/background03.jpg)"></div> -->
 			<!-- /Backgound Image -->
 
 			<!-- container -->
-			<div class="container">
+		<!--	<div class="container"> -->
 
 				<!-- row -->
-				<div class="row">
+			<!--  	<div class="row"> -->
 
 					<!-- reservation form -->
-					<div class="col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1">
+				<!--  	<div class="col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1">
 						<form class="reserve-form row">
 							<div class="section-header text-center">
 								<h4 class="sub-title">Reservation</h4>
@@ -436,10 +315,10 @@
 
 						</form>
 					</div>
-					<!-- /reservation form -->
+			-->		<!-- /reservation form -->
 
 					<!-- opening time -->
-					<div class="col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1">
+		<!--  		<div class="col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1">
 						<div class="opening-time row">
 							<div class="section-header text-center">
 								<h2 class="title white-text">Opening Time</h2>
@@ -476,16 +355,16 @@
 							</ul>
 						</div>
 					</div>
-					<!-- /opening time -->
+				-->	<!-- /opening time -->
 
-				</div>
-				<!-- /row -->
+			<!--	</div>
+				 /row -->
 
-			</div>
-			<!-- /container -->
+		<!--	</div>
+			 /container -->
 
-		</div>
-		<!-- /Reservation -->
+	<!--	</div>
+		 /Reservation -->
 
 		<!-- Events -->
 		<div id="events" class="section">
@@ -595,14 +474,14 @@
 
 					<div class="col-md-5 col-md-offset-7">
 						<div class="section-header">
-							<h4 class="sub-title">Contact Us</h4>
+							<h4 name = "contact" class="sub-title">Contact Us</h4>
 							<h2 class="title">Get In Touch</h2>
 						</div>
 						<div class="contact-content">
-							<p>Te sit stet labitur veritus, sea similique consetetur ut. Ne fastidii oportere usu. Iusto mediocrem iudicabit ea eos, nemore offendit detraxit ei cum.</p>
-							<h3>Tel: <a href="#">045-548-14-97</a></h3>
-							<p>Address: 3685 Granville Lane</p>
-							<p>Email: <a href="#">Risotto@email.com</a></p>
+							<p>We are waiting for you. Write to us!</p>
+							<h3>Tel: <a href="#">(29)-69-21-163</a></h3>
+							<p>Address: Minsk m. Ykuba Kolasa</p>
+							<p>Email: <a href="#">diana.arabey@mail.com</a></p>
 							<ul class="list-inline">
 								<li><p>Follow Us:</p></li>
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -618,9 +497,9 @@
 			</div>
 			<!-- /container -->
 
-			<!-- map -->
+			
 			<div id="map"></div>
-			<!-- /map -->
+			
 
 		</div>
 		<!-- Contact -->
@@ -628,33 +507,21 @@
 		<!-- Footer -->
 		<footer id="footer">
 
-			<!-- container -->
+			
 			<div class="container">
 
-				<!-- row -->
+				
 				<div class="row">
 
-					<!-- copyright -->
+					
 					<div class="col-md-6">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						<span class="copyright">Copyright @2018 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></span>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					
+						<span class="copyright">Copyright @2018 </span>
+						
 					</div>
-					<!-- /copyright -->
+					
 
-					<!-- footer nav -->
-					<div class="col-md-6">
-						<nav class="footer-nav">
-							<a href="#">Home</a>
-							<a href="#">About</a>
-							<a href="#">Menu</a>
-							<a href="#">Reservation</a>
-							<a href="#">Galery</a>
-							<a href="#">Events</a>
-							<a href="#">Contact</a>
-						</nav>
-					</div>
-					<!-- /footer nav -->
+					
 
 				</div>
 				<!-- /row -->

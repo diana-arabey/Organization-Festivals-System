@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>Restaurant HTML Template</title>
+		<title>Inforamtion</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700%7CCabin:400%7CDancing+Script" rel="stylesheet">
@@ -35,11 +35,7 @@
 			<div id="top-nav">
 				<div class="container">
 
-				<!-- logo -->
-				<div class="logo">
-					<a href="index.html"><img src="./img/logo.png" alt="logo"></a>
-				</div>
-				<!-- logo -->
+			
 
 				<!-- Mobile toggle -->
 				<button class="navbar-toggle">
@@ -67,25 +63,25 @@
 					<!-- nav -->
 					<ul class="main-nav nav navbar-nav">
 						<li><a href="index">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Menu</a></li>
-						<li><a href="#">Reservation</a></li>
-						<li><a href="#">Galery</a></li>
-						<li><a href="#">Events</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="catalog">Catalog</a></li>
+						<li><a href="addPerformer">Add Performer</a></li>						
+						<li><a href="addEvent">Add Events</a></li>
+						<li><a href="#contact">Contact</a></li>
 					</ul>
 					<!-- /nav -->
 
 					<!-- button nav -->
 					<ul class="cta-nav">
-						<li><a href="#" class="main-button">Reserve</a></li>
+					<!-- 	<li><a href="/authorization" class="main-button" th:text = "${flagLog}"></a></li> -->
+						
+						<!-- <li><a href="/authorization" class="main-button">Log out</a></li> -->
 					</ul>
 					<!-- button nav -->
 
 					<!-- contact nav -->
 					<ul class="contact-nav nav navbar-nav">
-						<li><a href="#"><i class="fa fa-phone"></i> 045-548-14-97</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 3685 Granville Lane</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> (29)-69-21-163</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> Minsk m. Ykuba Kolasa</a></li>
 					</ul>
 					<!-- contact nav -->
 
@@ -107,12 +103,20 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h2 class="white-text title">Blog Post</h2>
+						<h2 class="white-text title">Detail information</h2>
 					</div>
 				</div>
 			</div>
 		</div>
-
+		
+<style>
+#novisible {
+    visibility:  hidden;
+    }
+#butt {
+	padding-right : 10px;
+}
+</style>
 
 		<!-- Blog -->
 		<div id="blog" class="section">
@@ -130,17 +134,16 @@
 						<div class="blog-img">
 							<img src="./img/blog-post.jpg" alt="">
 							<div class="blog-day">
-								<span>08<br>July</span>
+								<span>27<br>November</span>
 							</div>
-							<ul class="blog-meta">
-								<li><i class="fa fa-user"></i>John Doe</li>
-								<li><i class="fa fa-pencil"></i>Category</li>
-								<li><i class="fa fa-comments"></i>3</li>
-							</ul>
+							
 						</div>
 
+					<form action="#" th:object = "${event}" th:action="@{/subscribe}" method="post" >
 						<div class="blog-content">
 							<h3 th:text= "${event.name}"/>
+							<input type="number" name = "id" th:value="${event.id}" id = "novisible"> 
+           					<p name = "id"  th:text="${event.id}"  id = "novisible" ></p>
 							<p th:text = "'Theme of the festival: ' + ${kind}" />
 							<p th:text = "'Date: ' + ${event.date}" />
 							<p th:text = " ${event.description}" />
@@ -153,8 +156,16 @@
 	
     						</table>
 						</div>
-
-
+								<div action="#" th:action="@{/subscribe}"  class="cta-nav"  method="post" id = "butt" >
+						                <input type="submit" name="submit" id="submit" th:attr="id=${flag}"  class="main-button"  value="delete"  />
+						       </div>
+						
+								<div action="#" th:action="@{/subscribe}"  class="cta-nav"  method="post" id = "butt" >
+						                <input type="submit" name="submit" id="submit" th:attr="id=${flag}"  class="main-button"  value="subscribe"  />
+						       </div>
+						</form>
+						
+						
 						<!-- blog post tags -->
 						<div class="blog-tags">
 							<a href="#">tasty</a>
@@ -174,74 +185,13 @@
 						</div>
 						<!-- /blog post share -->
 
-						<!-- blog post nav -->
-						<div class="blog-nav">
-							<div class="row">
-
-								<!-- previous post -->
-								<div class="col-md-6">
-									<div class="blog-previous">
-										<a href="#">
-											<img src="./img/blog01.jpg" alt="">
-											<div>
-												<span>Previous Post</span>
-												<h4>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</h4>
-											</div>
-										</a>
-									</div>
-								</div>
-								<!-- /previous nav -->
-
-								<!-- next nav -->
-								<div class="col-md-6">
-									<div class="blog-next">
-										<a href="#">
-											<div>
-												<span>Next Post</span>
-												<h4>te vero tritani iuvaret vis. Nec odio periculis adipiscing an.</h4>
-											</div>
-											<img src="./img/blog02.jpg" alt="">
-										</a>
-									</div>
-								</div>
-								<!-- /next nav -->
-
-							</div>
-						</div>
-						<!-- /blog post nav -->
+						
 
 						<!-- blog post comments -->
 						<div class="blog-comments">
 							<h3 class="title">Comments</h3>
 
-							<!-- comment -->
-							<div class="media">
-								<div class="media-left">
-									<img src="./img/avatar.png" alt="">
-								</div>
-								<div class="media-body">
-									<div class="media-heading">
-										<h4>John Doe <small>2 min ago</small><small><a href="#" class="pull-right"><i class="fa fa-reply"></i></a></small></h4>
-									</div>
-									<p>Eu usu aliquip vivendo. Impedit suscipit invidunt te vel, sale periculis id mea. Ne nec atqui paulo,</p>
-								</div>
-
-								<!-- comment -->
-								<div class="media">
-									<div class="media-left">
-										<img src="./img/avatar.png" alt="">
-									</div>
-									<div class="media-body">
-										<div class="media-heading">
-											<h4>John Doe <small>2 min ago</small><small><a href="#" class="pull-right"><i class="fa fa-reply"></i></a></small></h4>
-										</div>
-										<p>Eu usu aliquip vivendo. Impedit suscipit invidunt te vel, sale periculis id mea. Ne nec atqui paulo,</p>
-									</div>
-								</div>
-								<!-- /comment -->
-
-							</div>
-							<!-- /comment -->
+							
 
 							<!-- comment -->
 							<div class="media">
@@ -250,9 +200,9 @@
 								</div>
 								<div class="media-body">
 									<div class="media-heading">
-										<h4>John Doe <small>2 min ago</small><small><a href="#" class="pull-right"><i class="fa fa-reply"></i></a></small></h4>
+										<h4>Somebody<small>2 min ago</small><small><a href="#" class="pull-right"><i class="fa fa-reply"></i></a></small></h4>
 									</div>
-									<p>Eu usu aliquip vivendo. Impedit suscipit invidunt te vel, sale periculis id mea. Ne nec atqui paulo,</p>
+									<p> The best festival witch i have ever attend</p>
 								</div>
 							</div>
 							<!-- /comment -->
@@ -295,24 +245,12 @@
 					<!-- copyright -->
 					<div class="col-md-6">
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						<span class="copyright">Copyright @2018 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></span>
+						<span class="copyright">Copyright @2018 </span>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</div>
 					<!-- /copyright -->
 
-					<!-- footer nav -->
-					<div class="col-md-6">
-						<nav class="footer-nav">
-							<a href="#">Home</a>
-							<a href="#">About</a>
-							<a href="#">Menu</a>
-							<a href="#">Reservation</a>
-							<a href="#">Galery</a>
-							<a href="#">Events</a>
-							<a href="#">Contact</a>
-						</nav>
-					</div>
-					<!-- /footer nav -->
+					
 
 				</div>
 				<!-- /row -->

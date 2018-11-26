@@ -68,8 +68,7 @@ public class Event {
 	{
 		this.id = id;
 	}
-	//@Id
-   // @GeneratedValue(strategy = GenerationType.AUTO)
+
 	public int getId () {
 		return this.id;
 	}

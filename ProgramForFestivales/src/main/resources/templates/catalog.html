@@ -35,11 +35,7 @@
 			<div id="top-nav">
 				<div class="container">
 
-				<!-- logo -->
-				<div class="logo">
-					<a href="index.html"><img src="./img/logo.png" alt="logo"></a>
-				</div>
-				<!-- logo -->
+			
 
 				<!-- Mobile toggle -->
 				<button class="navbar-toggle">
@@ -67,27 +63,22 @@
 					<!-- nav -->
 					<ul class="main-nav nav navbar-nav">
 						<li><a href="index">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Menu</a></li>
-						<li><a href="#">Reservation</a></li>
-						<li><a href="#">Galery</a></li>
-						<li><a href="#">Events</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="catalog">Catalog</a></li>
+						<li><a href="addPerformer">Add Performer</a></li>						
+						<li><a href="addEvent">Add Events</a></li>
+						<li><a href="#contact">Contact</a></li>
 					</ul>
 					<!-- /nav -->
 
-					<!-- button nav -->
-					<ul class="cta-nav">
-						<li><a href="#" class="main-button">Reserve</a></li>
-					</ul>
-					<!-- button nav -->
+					
 
 					<!-- contact nav -->
 					<ul class="contact-nav nav navbar-nav">
-						<li><a href="#"><i class="fa fa-phone"></i> 045-548-14-97</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 3685 Granville Lane</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> (29)-69-21-163</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> Minsk m. Ykuba Kolasa</a></li>
 					</ul>
 					<!-- contact nav -->
+					
 
 				</nav>
 				</div>
@@ -107,7 +98,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-						<h2 class="white-text title">Blog Post</h2>
+						<h2 class="white-text title">Catalog</h2>
 					</div>
 				</div>
 			</div>
@@ -119,14 +110,17 @@
     <div class="container" >
 
       <!-- Page Heading -->
-      <h1 class="my-4">Page Heading
-        <small>Secondary Text</small>
+      <h1 class="my-4">
+        
       </h1>
       
 <style>
 #novisible {
     visibility:  hidden;
     }
+#butt {
+	padding-right : 10px;
+}
 </style>
 
 <table th:each="prod,iterStat : ${list}" th:class="${iterStat.odd}? 'odd'">
@@ -139,18 +133,24 @@
           </a>
         </div>
         <div class="col-md-5">
-          <h3 th:text="${prod.name}"></h3>
+        
+        <form action="#" th:object = "${prod}" th:action="@{/blogView}" method="post" >
+           <input type="number" name = "id" th:value="${prod.id}" id = "novisible"> 
+           <p name = "id"  th:text="${prod.id}"  id = "novisible" ></p>
+           <input type="text" name = "name" th:value="${prod.name}" id = "novisible"> 
+          <h3 name = "name"  th:text="${prod.name}"   ></h3>
           <p  th:text="${prod.kindOfEvent}">   </p>
+          <input type="text" name = "description" th:value="${prod.description}" id = "novisible"> 
           <p th:text="${prod.description}">   </p>
          
-          <a id="vis" th:attr="id=${flag}" class="btn btn-primary" href="#" >View Project </a>
           
-       <form action="#" th:action="@{/subscribe}" method="post" >
-          <div action="#" th:action="@{/subscribe}"  method="post" class="btn btn-primary">
-                <input type="submit" name="submit" id="submit" class="submit"  value="Subscribe"  />
+          <div action="#" th:action="@{/blogView}" class="cta-nav" id = "butt" method="post" >
+                <input type="submit" name="submit" id="submit" th:attr="id=${flag}"  class="main-button"  value="View event"  />
           </div>
-       </form>
-          
+                    
+
+         </form> 
+         
         </div>
       </div>
 
@@ -158,30 +158,7 @@
       </tr>
 </table>
   
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
+     
 
     </div>
     <!-- /.container -->
@@ -199,25 +176,13 @@
 
 					<!-- copyright -->
 					<div class="col-md-6">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						<span class="copyright">Copyright @2018 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></span>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						
+						<span class="copyright">Copyright @2018 true"</span>
+						
 					</div>
 					<!-- /copyright -->
 
-					<!-- footer nav -->
-					<div class="col-md-6">
-						<nav class="footer-nav">
-							<a href="#">Home</a>
-							<a href="#">About</a>
-							<a href="#">Menu</a>
-							<a href="#">Reservation</a>
-							<a href="#">Galery</a>
-							<a href="#">Events</a>
-							<a href="#">Contact</a>
-						</nav>
-					</div>
-					<!-- /footer nav -->
+				
 
 				</div>
 				<!-- /row -->

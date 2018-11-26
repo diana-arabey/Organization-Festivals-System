@@ -88,6 +88,7 @@ public class EventController {
     	event.setCountOfMembers(0);		
     	place.setEvent(event);
 		event.setPlace(place);
+		event.setUsers(null);
 		
 		placeRepository.save(place);
 		eventRepository.save(event);
